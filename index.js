@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const serverless = require("serverless-http");
-const { initializeDatabase } = require("../db/db.connect");
-const Movie = require("../models/movie.models");
+const { initializeDatabase } = require("./db/db.connect");
+const Movie = require("./models/movie.models");
 
 const app = express();
 app.use(express.json());
