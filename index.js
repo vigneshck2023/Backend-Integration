@@ -8,10 +8,13 @@ const Movie = require("./models/movie.models");
 
 // Middleware
 app.use(express.json());
-app.use(cors({
-  origin: process.env.FRONTEND_URL // Allow only your frontend
-}));
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
 
+app.use(cors(corsOptions));
 // Connect to DB
 initializeDatabase();
 
